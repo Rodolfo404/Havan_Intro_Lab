@@ -23,6 +23,7 @@ namespace Cadastro_Usuario_Ex1
 
         private static void escolha()
         {
+           
             int opcao = 0;
             do
             {
@@ -38,20 +39,29 @@ namespace Cadastro_Usuario_Ex1
                         List<Usuario> usuarios = new List<Usuario>();
                         do
                         {
-                            Usuario user = new Usuario();
-                            user.Cadastro();
+                            Console.WriteLine("Digite seu nome");
+                            string nome = Validacao.ValidaStringEmBranco();
+                            Console.WriteLine("Digite seu sobrenome");
+                            string sobrenome = Validacao.ValidaStringEmBranco();
+                            Console.WriteLine("Digite sua idade");
+                            int idade = Validacao.ValidaInteiros();
+                            Console.WriteLine("Digite seu e-mail");
+                            string email = Validacao.ValidaStringEmBranco();
+                            Console.WriteLine("digite seu endereço");
+                            string endereco = Validacao.ValidaStringEmBranco();
+                            
+                            Usuario user = new Usuario(nome, sobrenome, idade, email, endereco);
                             Console.WriteLine("Deseja cadastrar mais 1?(y/n)");
                             resposta = Console.ReadLine();
-
                             usuarios.Add(user);
                         } while (resposta == "y");
 
-                        Usuario userSelect1 = usuarios.FirstOrDefault(u => u.nome.Equals("Chimbinha"));
-                        Usuario userSelect2 = (from u in usuarios where u.nome == "Chimbinha" select u).FirstOrDefault();
+                        //Usuario userSelect1 = usuarios.FirstOrDefault(u => u.nome.Equals("Chimbinha"));
+                        //Usuario userSelect2 = (from u in usuarios where u.nome == "Chimbinha" select u).FirstOrDefault();
                         
                         foreach (var item in usuarios)
                         {
-                            Console.WriteLine($"Seus dados são:\n nome: {item.nome.ToLower()}\n sobrenome: {item.sobrenome.ToLower()}\n idade: {item.idade}\n email: {item.email.ToLower()}\n endereço: {item.endereco.ToLower()}\n");
+                            Console.WriteLine($"Seus dados são:\n nome: {item.Nome.ToLower()}\n sobrenome: {item.Sobrenome.ToLower()}\n idade: {item.Idade}\n email: {item.Email.ToLower()}\n endereço: {item.Endereco.ToLower()}\n");
                         }
                         break;
                     case 2:
