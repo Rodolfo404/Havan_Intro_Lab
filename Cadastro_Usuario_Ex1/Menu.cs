@@ -35,34 +35,8 @@ namespace Cadastro_Usuario_Ex1
                         Console.ReadLine();
                         break;
                     case 1:
-                        string resposta = "";
-                        List<Usuario> usuarios = new List<Usuario>();
-                        do
-                        {
-                            Console.WriteLine("Digite seu nome");
-                            string nome = Validacao.ValidaStringEmBranco();
-                            Console.WriteLine("Digite seu sobrenome");
-                            string sobrenome = Validacao.ValidaStringEmBranco();
-                            Console.WriteLine("Digite sua idade");
-                            int idade = Validacao.ValidaInteiros();
-                            Console.WriteLine("Digite seu e-mail");
-                            string email = Validacao.ValidaStringEmBranco();
-                            Console.WriteLine("digite seu endereço");
-                            string endereco = Validacao.ValidaStringEmBranco();
-                            
-                            Usuario user = new Usuario(nome, sobrenome, idade, email, endereco);
-                            Console.WriteLine("Deseja cadastrar mais 1?(y/n)");
-                            resposta = Console.ReadLine();
-                            usuarios.Add(user);
-                        } while (resposta == "y");
-
-                        //Usuario userSelect1 = usuarios.FirstOrDefault(u => u.nome.Equals("Chimbinha"));
-                        //Usuario userSelect2 = (from u in usuarios where u.nome == "Chimbinha" select u).FirstOrDefault();
-                        
-                        foreach (var item in usuarios)
-                        {
-                            Console.WriteLine($"Seus dados são:\n nome: {item.Nome.ToLower()}\n sobrenome: {item.Sobrenome.ToLower()}\n idade: {item.Idade}\n email: {item.Email.ToLower()}\n endereço: {item.Endereco.ToLower()}\n");
-                        }
+                        ModuloUsuario moduloUsuario = new ModuloUsuario();
+                        moduloUsuario.Create();
                         break;
                     case 2:
                         Console.WriteLine("Em implementação (falta dev)\nAperte qualquer botão para sair");

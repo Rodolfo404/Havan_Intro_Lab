@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Cadastro_Usuario_Ex1
 {
-    class Class1
+    class Class2
     {
-        static void Main(string[] args)
+        static public void Main(string [] args)
         {
-            //Aula1.Executar();
-            //Usuario.CadastroUsuario();
             Menu.MontaMenu();
+            Console.ReadLine();
+
+
         }
     }
 }
