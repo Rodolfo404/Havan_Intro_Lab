@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UsuarioRepository.cs" />
     <Compile Include="HavanLabsContext.cs" />
     <Compile Include="Migrations\202107121912541_CreateTableusuario.cs" />
     <Compile Include="Migrations\202107121912541_CreateTableusuario.designer.cs">
